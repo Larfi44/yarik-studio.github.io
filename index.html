@@ -1,92 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/img/logo (dark).png" type="image/x-icon" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/style.css" />
-    <title>Yarik Stuio</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand p-0" href="/index.html">
-          <img src="/img/logo (light).svg" alt="logo" width="50px" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/projects.html">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/members.html">Members</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/news.html">News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/support.html">Technical support</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yarik Studio</title>
 
-    <div class="container text-center my-4">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 mx-auto">
-          <img
-            src="/img/Yarik Studio (dark).svg"
-            alt="Yarik Studio"
-            title="Yarik Studio"
-            style="width: 350px; margin-bottom: 3rem"
-          />
-          <h1 class="fw-light">Yarik Studio</h1>
-          <p class="lead text-muted">
-            It's a creative digital company specializing in development of
-            modern website, mobile apps and not only!
-          </p>
-          <p class="lead text-muted">Owner: Yaroslav Krasulya</p>
-          <div class="links" style="margin-top: 20px">
-            <a class="btn btn-primary" href="/projects.html">Projects</a>
-            <a class="btn btn-secondary" href="/members.html">Members</a>
-            <a class="btn btn-secondary" href="/news.html">News</a>
-            <a class="btn btn-secondary" href="/support.html">Technical support</a>
-          </div>
-        </div>
+  <!-- Relative paths (no leading slash) for project pages -->
+  <link rel="icon" href="img/logo-dark.png" type="image/png" />
+  <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+          crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand p-0" href="index.html">
+      <!-- rename files to avoid spaces; if not, keep %20 -->
+      <img src="img/logo-light.svg" alt="logo" width="50" />
+    </a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="support.html">Technical support</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container text-center my-4">
+  <div class="row">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <img src="img/YarikStudio-dark.svg" alt="Yarik Studio" title="Yarik Studio" style="width:350px;margin-bottom:3rem" />
+      <h1 class="fw-light">Yarik Studio</h1>
+      <p class="lead text-muted">It's a creative digital company specializing in development of modern websites, mobile apps and more!</p>
+      <p class="lead text-muted">Owner: Yaroslav Krasulya</p>
+      <div style="margin-top:20px">
+        <a class="btn btn-primary" href="projects.html">Projects</a>
+        <a class="btn btn-secondary" href="members.html">Members</a>
+        <a class="btn btn-secondary" href="news.html">News</a>
+        <a class="btn btn-secondary" href="support.html">Technical support</a>
       </div>
     </div>
-  </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
+</main>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const userLang = navigator.language || navigator.userLanguage;
+<footer class="text-center py-4 small text-muted">© Yarik Studio</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Embedded language-detection script (won't redirect if already in /ru/) -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    try {
+      const userLang = navigator.language || navigator.userLanguage || "";
       console.log("Browser language detected:", userLang);
 
-      if (userLang.startsWith("ru")) {
-        window.location.href = "ru/index.html";
+      // Only redirect to /ru/ if:
+      // 1) browser language starts with "ru"
+      // 2) and we are NOT already in a ru/ path
+      if (userLang.startsWith("ru") && !location.pathname.match(/(^|\/)ru(\/|$)/i)) {
+        // redirect to ru/index.html (relative)
+        location.href = "ru/index.html";
       }
-    });
-  </script>
+    } catch (e) {
+      console.warn("lang-detect error", e);
+    }
+  });
+</script>
+</body>
 </html>
