@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yarik Studio</title>
-
-  <!-- Relative paths (no leading slash) for project pages -->
-  <link rel="icon" href="img/logo-dark.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="img/logo (dark).png" type="image/png" />
   <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -14,14 +11,13 @@
           crossorigin="anonymous"
   />
   <link rel="stylesheet" href="style.css" />
+  <title>Yarik Studio</title>
 </head>
-
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand p-0" href="index.html">
-      <!-- rename files to avoid spaces; if not, keep %20 -->
-      <img src="img/logo-light.svg" alt="logo" width="50" />
+      <img src="img/logo (light).svg" alt="logo" width="50px" />
     </a>
     <button
             class="navbar-toggler"
@@ -46,14 +42,21 @@
   </div>
 </nav>
 
-<main class="container text-center my-4">
+<div class="container text-center my-4">
   <div class="row">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <img src="img/YarikStudio-dark.svg" alt="Yarik Studio" title="Yarik Studio" style="width:350px;margin-bottom:3rem" />
+    <div class="col-lg-6 col-md-6 mx-auto">
+      <img
+              src="img/Yarik Studio (dark).svg"
+              alt="Yarik Studio"
+              title="Yarik Studio"
+              style="width: 350px; margin-bottom: 3rem"
+      />
       <h1 class="fw-light">Yarik Studio</h1>
-      <p class="lead text-muted">It's a creative digital company specializing in development of modern websites, mobile apps and more!</p>
+      <p class="lead text-muted">
+        It's a creative digital company specializing in development of modern website, mobile apps and not only!
+      </p>
       <p class="lead text-muted">Owner: Yaroslav Krasulya</p>
-      <div style="margin-top:20px">
+      <div class="links" style="margin-top: 20px">
         <a class="btn btn-primary" href="projects.html">Projects</a>
         <a class="btn btn-secondary" href="members.html">Members</a>
         <a class="btn btn-secondary" href="news.html">News</a>
@@ -61,28 +64,33 @@
       </div>
     </div>
   </div>
-</main>
-
-<footer class="text-center py-4 small text-muted">© Yarik Studio</footer>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Embedded language-detection script (won't redirect if already in /ru/) -->
 <script>
+  // Redirect to ru/index.html only if that file exists (prevents 404)
   document.addEventListener("DOMContentLoaded", function () {
+    const userLang = navigator.language || navigator.userLanguage || "";
     try {
-      const userLang = navigator.language || navigator.userLanguage || "";
-      console.log("Browser language detected:", userLang);
-
-      // Only redirect to /ru/ if:
-      // 1) browser language starts with "ru"
-      // 2) and we are NOT already in a ru/ path
-      if (userLang.startsWith("ru") && !location.pathname.match(/(^|\/)ru(\/|$)/i)) {
-        // redirect to ru/index.html (relative)
-        location.href = "ru/index.html";
+      if (userLang.startsWith("ru")) {
+        // Check existence of ru/index.html before redirecting
+        fetch("ru/index.html", { method: "HEAD" })
+                .then((resp) => {
+                  if (resp && resp.ok) {
+                    // existing — redirect
+                    window.location.href = "ru/index.html";
+                  } else {
+                    // do not redirect if not found
+                    console.log("ru/index.html not found, skipping redirect");
+                  }
+                })
+                .catch((e) => {
+                  console.log("Could not check ru/index.html:", e);
+                });
       }
     } catch (e) {
-      console.warn("lang-detect error", e);
+      console.error(e);
     }
   });
 </script>
