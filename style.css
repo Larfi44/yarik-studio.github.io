@@ -17,6 +17,11 @@
   height: 200px;
   width: 200px;
   padding: 1em;
+  object-fit: cover;
+}
+
+.img-circle {
+  border-radius: 50%;
 }
 
 .card-body {
