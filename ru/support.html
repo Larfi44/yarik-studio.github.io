@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
           crossorigin="anonymous"
   />
   <link rel="stylesheet" href="../style.css" />
-  <title>Yarik Studio News</title>
+  <title>Yarik Studio Техподдержка</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -33,45 +33,36 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Main</a>
+          <a class="nav-link" aria-current="page" href="index.html">Главная</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="projects.html">Projects</a>
+          <a class="nav-link" href="projects.html">Проекты</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="members.html">Members</a>
+          <a class="nav-link" href="members.html">Участники</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="news.html">News</a>
+          <a class="nav-link" href="news.html">Новости</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="support.html">Technical Support</a>
+          <a class="nav-link active" href="support.html">Техподдержка</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<div class="container my-3">
-  <div class="card">
-    <div class="row g-1">
-      <div class="col-md-4">
-        <img src="../img/logo (dark).svg" alt="Logo Yarik Studio" />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h2 class="card-title">Update Yarik Studio</h5>
-            <p class="card-text text-muted lead">Author: Larfi<br>
-              Date: August 16, 2025</p>
-            <h5 class="card-text lead">
-              Added "News" and "Support".
-            </h5>
-        </div>
-      </div>
-    </div>
-  </div>
+
+<div style="margin-top:40px; text-align:center; font-size: 25px;">
+  <p id="supportMessage" data-i18n="support.message">Вы можете написать в техподдержку. Вы можете рассказать о баге, предложить идею и так далее.<br>Чтобы написать в техподдержку, напишите на следующую электронную почту:</p>
+  <p style="margin-top:10px;font-weight:600" data-i18n="support.email1">yaroslav.krasulya@gmail.com</p>
+  <p style="margin-top:60px" id="supportFollowUp" data-i18n="support.followup">Если ответа нет в течение 2 дней, отправьте ваше сообщение еще раз на ту же почту или напишите на другую почту:</p>
+  <p style="margin-top:10px;font-weight:600" data-i18n="support.email2">yaroslav.krasulya@icloud.com</p>
 </div>
+
 <footer class="text-center my-4">
   <small class="text-muted">© Yarik Studio</small>
 </footer>
+
+
 </body>
 </html>
