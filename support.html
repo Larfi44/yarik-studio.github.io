@@ -66,4 +66,12 @@
 
 
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const userLang = navigator.language || navigator.userLanguage || '';
+    if (userLang.startsWith('ru')) {
+      location.href = 'ru/index.html';
+    }
+  });
+</script>
 </html>
