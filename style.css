@@ -46,3 +46,24 @@
 .project-card.hidden {
   display: none !important;
 }
+
+@media (min-width: 800px) {
+  .navbar-expand-custom {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-expand-custom .navbar-toggler {
+    display: none;
+  }
+  .navbar-expand-custom .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-expand-custom .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+.navbar-nav .nav-link {
+  margin: 0 0.5rem;
+}
