@@ -515,6 +515,9 @@ h1 {
   background: var(--surface-color);
   padding: 1rem;
   transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card:hover .card-img {
@@ -528,11 +531,19 @@ h1 {
   margin: 2rem 0;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center; /* Center all text */
+}
+
 .card-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
   font-weight: 600;
+  text-align: center;
 }
 
 .card-text {
@@ -540,17 +551,43 @@ h1 {
   margin-bottom: 1.5rem;
   flex: 1;
   line-height: 1.7;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
 }
 
 .card-additional {
-  margin-top: auto;
+  margin-top: auto; /* Pushes to bottom */
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-color);
+  text-align: center;
 }
 
 .card-additional p {
   margin-bottom: 0.75rem;
   font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ===== PROJECT CARD SPECIFIC ===== */
+.project-card .card-additional .btn {
+  display: block;
+  width: 80%;
+  max-width: 200px;
+  margin: 0.5rem auto;
+  margin-bottom: 0;
+}
+
+/* Center all text in project cards */
+.project-card .text-muted {
+  text-align: center;
+  display: block;
+}
+
+/* Center spans within text */
+.project-card .text-muted span {
+  display: inline;
 }
 
 /* ===== FILTER BUTTONS ===== */

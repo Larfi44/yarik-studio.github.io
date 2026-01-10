@@ -32,7 +32,6 @@ window.translations = {
     "projects.release_date": "Release date",
     "projects.site": "Site",
     "projects.mobile_app": "Mobile app",
-    "projects.website": "Website",
     "projects.test_site": "Test site",
     "projects.search_placeholder": "Search projects",
     "projects.search_results": " projects found",
@@ -88,7 +87,8 @@ window.translations = {
     "project.pikuco.release_date": "March, 2024 (first test)",
 
     // Members page
-    "member.nickname": "Nickname: Larfi — Owner and main developer",
+    "member.name": "Yaroslav Krasulya",
+    "member.rank": "Owner and Main developer",
     "member.description":
       "I am the main developer and the owner of Yarik Studio. I do the development and design myself.",
 
@@ -99,38 +99,38 @@ window.translations = {
     "news.spaceyarik.title": "New project: SpaceYarik Simulator",
     "news.spaceyarik.description":
       "Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.",
-    "news.spaceyarik.author_name": "Larfi",
+    "news.spaceyarik.author_name": "Yaroslav Krasulya",
     "news.spaceyarik.date": "December 31, 2025",
 
     "news.war_ages_release.title":
       "Release of the New project: War through the Ages",
     "news.war_ages_release.description":
       "Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.",
-    "news.war_ages_release.author_name": "Larfi",
+    "news.war_ages_release.author_name": "Yaroslav Krasulya",
     "news.war_ages_release.date": "November 29, 2025",
 
     "news.war_ages_beta.title":
       "Beta version of the New project: War through the Ages",
     "news.war_ages_beta.description":
       "Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.",
-    "news.war_ages_beta.author_name": "Larfi",
+    "news.war_ages_beta.author_name": "Yaroslav Krasulya",
     "news.war_ages_beta.date": "November 23, 2025",
 
     "news.yaroslavai.title": "New project: Yaroslav AI",
     "news.yaroslavai.description":
       'This is our artificial intelligence (AI) that named "Yaroslav AI"! You can ask him anything and he will be happy to help you!',
-    "news.yaroslavai.author_name": "Larfi",
+    "news.yaroslavai.author_name": "Yaroslav Krasulya",
     "news.yaroslavai.date": "September 9, 2025",
 
     "news.yarikcoin.title": "Update YarikCoin (2.0)",
     "news.yarikcoin.description":
       "Added many features like Chart, Transactions, Orders, Miner, Job, Promocodes, Settings, New interface and more!",
-    "news.yarikcoin.author_name": "Larfi",
+    "news.yarikcoin.author_name": "Yaroslav Krasulya",
     "news.yarikcoin.date": "September 7, 2025",
 
     "news.studio_update.title": "Update Yarik Studio site (2.0)",
     "news.studio_update.description": 'Added "News" and "Support".',
-    "news.studio_update.author_name": "Larfi",
+    "news.studio_update.author_name": "Yaroslav Krasulya",
     "news.studio_update.date": "August 16, 2025",
 
     // Support page
@@ -188,7 +188,7 @@ window.translations = {
     // Home page
     "home.description":
       "Это креативная цифровая компания, специализирующаяся на современных сайтах, мобильных приложениях и многом другом.",
-    "home.owner": "Владелец: Ярослав Красуля",
+    "home.owner": "Владелец: Красуля Ярослав",
     "home.btn_projects": "Проекты",
     "home.btn_members": "Участники",
     "home.btn_news": "Новости",
@@ -203,7 +203,6 @@ window.translations = {
     "projects.release_date": "Дата выхода",
     "projects.site": "Сайт",
     "projects.mobile_app": "Мобильное приложение",
-    "projects.website": "Веб-сайт",
     "projects.test_site": "Тестовый сайт",
     "projects.search_placeholder": "Искать проекты",
     "projects.search_results": " проектов найдено",
@@ -259,7 +258,8 @@ window.translations = {
     "project.pikuco.release_date": "Март 2024 (первый тест)",
 
     // Members page
-    "member.nickname": "Никнейм: Larfi — Владелец и главный разработчик",
+    "member.name": "Красуля Ярослав",
+    "member.rank": "Владелец и Главный разработчик",
     "member.description":
       "Я главный разработчик и владелец Yarik Studio. Я занимаюсь разработкой и дизайном самостоятельно.",
 
@@ -270,38 +270,38 @@ window.translations = {
     "news.spaceyarik.title": "Новый проект: SpaceYarik Simulator",
     "news.spaceyarik.description":
       "Создайте свою армию в 6 исторических эпохах, улучшайте технологии и сражайтесь с врагами и боссами в стратегических боях.",
-    "news.spaceyarik.author_name": "Larfi",
+    "news.spaceyarik.author_name": "Красуля Ярослав",
     "news.spaceyarik.date": "31 декабря 2025",
 
     "news.war_ages_release.title": "Релиз нового проекта: War through the Ages",
     "news.war_ages_release.description":
       "Создайте свою армию в 6 исторических эпохах, улучшайте технологии,и сражайтесь с врагами и боссами в стратегических боях.",
-    "news.war_ages_release.author_name": "Larfi",
+    "news.war_ages_release.author_name": "Красуля Ярослав",
     "news.war_ages_release.date": "29 ноября 2025",
 
     "news.war_ages_beta.title":
       "Бета-версия нового проекта: War through the Ages",
     "news.war_ages_beta.description":
       "Создайте свою армию в 6 исторических эпохах, улучшайте технологии,и сражайтесь с врагами и боссами в стратегических боях.",
-    "news.war_ages_beta.author_name": "Larfi",
+    "news.war_ages_beta.author_name": "Красуля Ярославi",
     "news.war_ages_beta.date": "23 ноября 2025",
 
     "news.yaroslavai.title": "Новый проект: Yaroslav AI",
     "news.yaroslavai.description":
       'Это наш искусственный интеллект (ИИ) по имени "Yaroslav AI"! Вы можете задать ему любой вопрос, и он будет рад помочь вам!',
-    "news.yaroslavai.author_name": "Larfi",
+    "news.yaroslavai.author_name": "Красуля Ярослав",
     "news.yaroslavai.date": "9 сентября 2025",
 
     "news.yarikcoin.title": "Обновление YarikCoin (2.0)",
     "news.yarikcoin.description":
       "Добавлено множество функций, таких как График, Транзакции, Ордеры, Майнер, Работа, Промокоды, Настройки, Новый интерфейс и многое другое!",
-    "news.yarikcoin.author_name": "Larfi",
+    "news.yarikcoin.author_name": "Красуля Ярослав",
     "news.yarikcoin.date": "7 сентября 2025",
 
     "news.studio_update.title": "Обновление сайта Yarik Studio (2.0)",
     "news.studio_update.description":
       'Добавлены разделы "Новости" и "Поддержка".',
-    "news.studio_update.author_name": "Larfi",
+    "news.studio_update.author_name": "Красуля Ярослав",
     "news.studio_update.date": "16 августа 2025",
 
     // Support page
