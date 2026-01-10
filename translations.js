@@ -34,6 +34,11 @@ window.translations = {
     "projects.mobile_app": "Mobile app",
     "projects.website": "Website",
     "projects.test_site": "Test site",
+    "projects.search_placeholder": "Search projects",
+    "projects.search_results": " projects found",
+    "projects.no_results_title": "No projects found",
+    "projects.no_results_message":
+      "Try adjusting your search or filter to find what you're looking for.",
 
     // Project descriptions
     "project.yaroslavai.title": "Yaroslav AI",
@@ -195,11 +200,16 @@ window.translations = {
     "projects.filter_mobile": "Мобильные приложения",
     "projects.filter_others": "Другое",
     "projects.languages": "Языки",
-    "projects.release_date": "Дата релиза",
+    "projects.release_date": "Дата выхода",
     "projects.site": "Сайт",
     "projects.mobile_app": "Мобильное приложение",
     "projects.website": "Веб-сайт",
     "projects.test_site": "Тестовый сайт",
+    "projects.search_placeholder": "Искать проекты",
+    "projects.search_results": " проектов найдено",
+    "projects.no_results_title": "Ничего не найдено",
+    "projects.no_results_message":
+      "Попробуйте изменить параметры поиска или фильтр, чтобы найти то, что вам нужно.",
 
     // Project descriptions
     "project.yaroslavai.title": "Yaroslav AI",

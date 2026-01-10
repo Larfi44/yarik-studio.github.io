@@ -20,6 +20,7 @@
             alt="Yarik Studio Logo"
             width="50"
             height="50"
+            class="nav-logo"
           />
         </a>
 
@@ -104,6 +105,28 @@
     </nav>
 
     <main class="container">
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search-box">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search projects"
+            data-i18n-placeholder="projects.search_placeholder"
+          />
+          <button class="search-btn" aria-label="Search">
+            <span class="search-icon">🔍</span>
+          </button>
+          <button class="search-clear hidden" aria-label="Clear search">
+            <span>✕</span>
+          </button>
+        </div>
+        <div class="search-results-info hidden">
+          <span class="search-count">0</span>
+          <span data-i18n="projects.search_results"> projects found</span>
+        </div>
+      </div>
+
       <!-- Categories -->
       <div class="filter-buttons">
         <button
@@ -142,6 +165,7 @@
 
       <!-- Projects -->
       <div class="card-grid" id="projects-container">
+        <!-- Project cards remain the same as before -->
         <div class="project-card" data-category="website">
           <div class="card">
             <img
@@ -472,6 +496,14 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results hidden">
+        <h3 data-i18n="projects.no_results_title">No projects found</h3>
+        <p data-i18n="projects.no_results_message">
+          Try adjusting your search or filter to find what you're looking for.
+        </p>
       </div>
     </main>
 
