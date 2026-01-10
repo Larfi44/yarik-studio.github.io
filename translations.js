@@ -39,25 +39,48 @@ window.translations = {
     "project.yaroslavai.title": "Yaroslav AI",
     "project.yaroslavai.description":
       "AI assistant that helps you with your daily tasks. You can ask him anything and he will be happy to help you!",
+    "project.yaroslavai.languages": "English, Russian",
+    "project.yaroslavai.release_date": "September 9, 2025",
+
     "project.spaceyarik.title": "SpaceYarik Simulator",
     "project.spaceyarik.description":
       "Explore the Solar System with realistic scales! Navigate planets, moons, asteroids, and comets. Adjust scale modes, follow orbits, and discover celestial mechanics in an interactive simulation!",
+    "project.spaceyarik.languages": "English, Russian",
+    "project.spaceyarik.release_date": "December 31, 2025",
+
     "project.war_ages.title": "War through the Ages",
     "project.war_ages.description":
       "Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.",
+    "project.war_ages.languages": "English, Russian",
+    "project.war_ages.release_date": "November 29, 2025",
+
     "project.quantum_clicker.title": "Quantum clicker",
     "project.quantum_clicker.description":
       "Clicker, where you need to click on the quantum that moves you to other worlds!",
+    "project.quantum_clicker.languages": "English, Russian, Chinese",
+    "project.quantum_clicker.release_date": "June, 2025",
+
     "project.todo_list.title": "To-do List",
     "project.todo_list.description":
       "A useful application where you can record your tasks and goals.",
+    "project.todo_list.languages": "English, Russian",
+    "project.todo_list.release_date": "May, 2025",
+
     "project.yarikcoin.title": "YarikCoin",
     "project.yarikcoin.description":
       "Virtual cryptocurrency, changing every hour, with virtual money, graphics and many other features!",
+    "project.yarikcoin.languages": "Russian, English",
+    "project.yarikcoin.release_date": "April 21, 2025",
+
     "project.hombresilo.title": "Hombresilo",
     "project.hombresilo.description": 'Information about game "Hombresilo".',
+    "project.hombresilo.languages": "Russian",
+    "project.hombresilo.release_date": "April, 2025",
+
     "project.pikuco.title": "Tests in pikuco.ru",
     "project.pikuco.description": "More than 30 tests on different topics.",
+    "project.pikuco.languages": "Russian",
+    "project.pikuco.release_date": "March, 2024 (first test)",
 
     // Members page
     "member.nickname": "Nickname: Larfi — Owner and main developer",
@@ -67,25 +90,43 @@ window.translations = {
     // News page
     "news.author": "Author",
     "news.date": "Date",
+
     "news.spaceyarik.title": "New project: SpaceYarik Simulator",
     "news.spaceyarik.description":
       "Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.",
+    "news.spaceyarik.author_name": "Larfi",
+    "news.spaceyarik.date": "December 31, 2025",
+
     "news.war_ages_release.title":
       "Release of the New project: War through the Ages",
     "news.war_ages_release.description":
       "Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.",
+    "news.war_ages_release.author_name": "Larfi",
+    "news.war_ages_release.date": "November 29, 2025",
+
     "news.war_ages_beta.title":
       "Beta version of the New project: War through the Ages",
     "news.war_ages_beta.description":
       "Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.",
+    "news.war_ages_beta.author_name": "Larfi",
+    "news.war_ages_beta.date": "November 23, 2025",
+
     "news.yaroslavai.title": "New project: Yaroslav AI",
     "news.yaroslavai.description":
       'This is our artificial intelligence (AI) that named "Yaroslav AI"! You can ask him anything and he will be happy to help you!',
+    "news.yaroslavai.author_name": "Larfi",
+    "news.yaroslavai.date": "September 9, 2025",
+
     "news.yarikcoin.title": "Update YarikCoin (2.0)",
     "news.yarikcoin.description":
       "Added many features like Chart, Transactions, Orders, Miner, Job, Promocodes, Settings, New interface and more!",
+    "news.yarikcoin.author_name": "Larfi",
+    "news.yarikcoin.date": "September 7, 2025",
+
     "news.studio_update.title": "Update Yarik Studio site (2.0)",
     "news.studio_update.description": 'Added "News" and "Support".',
+    "news.studio_update.author_name": "Larfi",
+    "news.studio_update.date": "August 16, 2025",
 
     // Support page
     "support.message":
@@ -109,6 +150,20 @@ window.translations = {
     // Buttons
     "button.open": "Open",
     "button.download": "Download",
+
+    // Months and Dates
+    "month.january": "January",
+    "month.february": "February",
+    "month.march": "March",
+    "month.april": "April",
+    "month.may": "May",
+    "month.june": "June",
+    "month.july": "July",
+    "month.august": "August",
+    "month.september": "September",
+    "month.october": "October",
+    "month.november": "November",
+    "month.december": "December",
   },
   ru: {
     // Titles
@@ -150,25 +205,48 @@ window.translations = {
     "project.yaroslavai.title": "Yaroslav AI",
     "project.yaroslavai.description":
       "ИИ-ассистент, который помогает вам с повседневными задачами. Вы можете задать ему любой вопрос, и он будет рад помочь!",
+    "project.yaroslavai.languages": "Английский, Русский",
+    "project.yaroslavai.release_date": "9 сентября 2025",
+
     "project.spaceyarik.title": "SpaceYarik Simulator",
     "project.spaceyarik.description":
       "Исследуйте Солнечную систему в реальном масштабе! Навигация по планетам, лунам, астероидам и кометам. Регулируйте режимы масштаба, следите за орбитами и изучайте небесную механику в интерактивной симуляции!",
+    "project.spaceyarik.languages": "Английский, Русский",
+    "project.spaceyarik.release_date": "31 декабря 2025",
+
     "project.war_ages.title": "War through the Ages",
     "project.war_ages.description":
       "Создайте свою армию в 6 исторических эпохах, улучшайте технологии и сражайтесь с врагами и боссами в стратегических боях.",
+    "project.war_ages.languages": "Английский, Русский",
+    "project.war_ages.release_date": "29 ноября 2025",
+
     "project.quantum_clicker.title": "Quantum clicker",
     "project.quantum_clicker.description":
       "Кликер, в котором нужно кликать на квант, перемещающий вас в другие миры!",
+    "project.quantum_clicker.languages": "Английский, Русский, Китайский",
+    "project.quantum_clicker.release_date": "Июнь 2025",
+
     "project.todo_list.title": "To-do List",
     "project.todo_list.description":
       "Полезное приложение, где вы можете записывать свои задачи и цели.",
+    "project.todo_list.languages": "Английский, Русский",
+    "project.todo_list.release_date": "Май 2025",
+
     "project.yarikcoin.title": "YarikCoin",
     "project.yarikcoin.description":
       "Виртуальная криптовалюта, меняющаяся каждый час, с виртуальными деньгами, графиками и многими другими функциями!",
+    "project.yarikcoin.languages": "Русский, Английский",
+    "project.yarikcoin.release_date": "21 апреля 2025",
+
     "project.hombresilo.title": "Hombresilo",
     "project.hombresilo.description": 'Информация об игре "Hombresilo".',
+    "project.hombresilo.languages": "Русский",
+    "project.hombresilo.release_date": "Апрель 2025",
+
     "project.pikuco.title": "Тесты на pikuco.ru",
     "project.pikuco.description": "Более 30 тестов на разные темы.",
+    "project.pikuco.languages": "Русский",
+    "project.pikuco.release_date": "Март 2024 (первый тест)",
 
     // Members page
     "member.nickname": "Никнейм: Larfi — Владелец и главный разработчик",
@@ -178,25 +256,43 @@ window.translations = {
     // News page
     "news.author": "Автор",
     "news.date": "Дата",
+
     "news.spaceyarik.title": "Новый проект: SpaceYarik Simulator",
     "news.spaceyarik.description":
       "Создайте свою армию в 6 исторических эпохах, улучшайте технологии и сражайтесь с врагами и боссами в стратегических боях.",
+    "news.spaceyarik.author_name": "Larfi",
+    "news.spaceyarik.date": "31 декабря 2025",
+
     "news.war_ages_release.title": "Релиз нового проекта: War through the Ages",
     "news.war_ages_release.description":
       "Создайте свою армию в 6 исторических эпохах, улучшайте технологии,и сражайтесь с врагами и боссами в стратегических боях.",
+    "news.war_ages_release.author_name": "Larfi",
+    "news.war_ages_release.date": "29 ноября 2025",
+
     "news.war_ages_beta.title":
       "Бета-версия нового проекта: War through the Ages",
     "news.war_ages_beta.description":
       "Создайте свою армию в 6 исторических эпохах, улучшайте технологии,и сражайтесь с врагами и боссами в стратегических боях.",
+    "news.war_ages_beta.author_name": "Larfi",
+    "news.war_ages_beta.date": "23 ноября 2025",
+
     "news.yaroslavai.title": "Новый проект: Yaroslav AI",
     "news.yaroslavai.description":
       'Это наш искусственный интеллект (ИИ) по имени "Yaroslav AI"! Вы можете задать ему любой вопрос, и он будет рад помочь вам!',
+    "news.yaroslavai.author_name": "Larfi",
+    "news.yaroslavai.date": "9 сентября 2025",
+
     "news.yarikcoin.title": "Обновление YarikCoin (2.0)",
     "news.yarikcoin.description":
       "Добавлено множество функций, таких как График, Транзакции, Ордеры, Майнер, Работа, Промокоды, Настройки, Новый интерфейс и многое другое!",
+    "news.yarikcoin.author_name": "Larfi",
+    "news.yarikcoin.date": "7 сентября 2025",
+
     "news.studio_update.title": "Обновление сайта Yarik Studio (2.0)",
     "news.studio_update.description":
       'Добавлены разделы "Новости" и "Поддержка".',
+    "news.studio_update.author_name": "Larfi",
+    "news.studio_update.date": "16 августа 2025",
 
     // Support page
     "support.message":
@@ -220,5 +316,19 @@ window.translations = {
     // Buttons
     "button.open": "Открыть",
     "button.download": "Скачать",
+
+    // Months and Dates
+    "month.january": "Январь",
+    "month.february": "Февраль",
+    "month.march": "Март",
+    "month.april": "Апрель",
+    "month.may": "Май",
+    "month.june": "Июнь",
+    "month.july": "Июль",
+    "month.august": "Август",
+    "month.september": "Сентябрь",
+    "month.october": "Октябрь",
+    "month.november": "Ноябрь",
+    "month.december": "Декабрь",
   },
 };

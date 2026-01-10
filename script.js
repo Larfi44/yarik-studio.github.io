@@ -8,9 +8,10 @@ class SiteManager {
     this.initTheme();
     this.initLanguage();
     this.setupEventListeners();
-    this.updateThemeIcons();
-    this.updateThemeToggleText();
-    this.updateLanguageToggleText();
+    this.updateThemeButtons();
+    this.updateLanguageButtons();
+    this.updateFavicon();
+    this.updateLogo();
   }
 
   // Theme Management
@@ -32,25 +33,41 @@ class SiteManager {
   setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-    this.updateThemeIcons();
+    this.updateThemeButtons();
     this.updateFavicon();
-    this.updateThemeToggleText();
     this.updateLogo();
+    this.updateThemeCSSVariables();
   }
 
   getEffectiveTheme() {
     const theme = document.documentElement.getAttribute("data-theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
 
     if (theme === "auto") {
+      // Check browser preference
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       return prefersDark ? "dark" : "light";
     }
     return theme;
   }
 
-  updateThemeIcons() {
+  updateThemeCSSVariables() {
+    // Force CSS to recalculate based on effective theme
+    const effectiveTheme = this.getEffectiveTheme();
+    const tempAttribute = "data-temp-theme";
+
+    // Temporarily set the effective theme to trigger CSS updates
+    document.documentElement.setAttribute(tempAttribute, effectiveTheme);
+
+    // Force reflow to ensure CSS updates
+    document.body.offsetHeight;
+
+    // Remove temporary attribute
+    document.documentElement.removeAttribute(tempAttribute);
+  }
+
+  updateThemeButtons() {
     const theme = document.documentElement.getAttribute("data-theme");
     const themeBtns = document.querySelectorAll(".theme-btn");
 
@@ -66,8 +83,7 @@ class SiteManager {
     const theme = this.getEffectiveTheme();
     const link = document.querySelector("link[rel*='icon']");
 
-    // If browser/effective theme is light, use dark favicon (for contrast)
-    // If browser/effective theme is dark, use light favicon (for contrast)
+    // Invert: dark theme gets light favicon, light theme gets dark favicon
     let iconPath = "../assets/favicons/favicon-dark.svg";
 
     if (theme === "dark") {
@@ -92,21 +108,6 @@ class SiteManager {
     }
   }
 
-  updateThemeToggleText() {
-    const theme = document.documentElement.getAttribute("data-theme");
-    const themeToggle = document.querySelector(".theme-toggle .current-theme");
-    if (!themeToggle) return;
-
-    const lang = document.documentElement.getAttribute("lang");
-    const themeText = {
-      auto: translations[lang]?.["theme.auto"] || "Auto",
-      light: translations[lang]?.["theme.light"] || "Light",
-      dark: translations[lang]?.["theme.dark"] || "Dark",
-    };
-
-    themeToggle.textContent = themeText[theme];
-  }
-
   // Language Management
   initLanguage() {
     const savedLang = localStorage.getItem("language");
@@ -128,8 +129,6 @@ class SiteManager {
     localStorage.setItem("language", lang);
     this.updateContent(lang);
     this.updateLanguageButtons();
-    this.updateLanguageToggleText();
-    this.updateThemeToggleText();
   }
 
   updateContent(lang) {
@@ -161,6 +160,29 @@ class SiteManager {
         }
       }
     });
+
+    // Update dates and other dynamic content
+    this.updateDynamicContent(lang);
+  }
+
+  updateDynamicContent(lang) {
+    // Update dates based on language
+    const dateElements = document.querySelectorAll("[data-i18n-date]");
+    dateElements.forEach((element) => {
+      const key = element.getAttribute("data-i18n-date");
+      if (translations[lang] && translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+
+    // Update languages list
+    const langElements = document.querySelectorAll("[data-i18n-lang]");
+    langElements.forEach((element) => {
+      const key = element.getAttribute("data-i18n-lang");
+      if (translations[lang] && translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
   }
 
   updateLanguageButtons() {
@@ -173,19 +195,6 @@ class SiteManager {
         btn.classList.add("active");
       }
     });
-  }
-
-  updateLanguageToggleText() {
-    const lang = document.documentElement.getAttribute("lang");
-    const langToggle = document.querySelector(".lang-toggle .current-lang");
-    if (!langToggle) return;
-
-    const langText = {
-      en: translations[lang]?.["language.english"] || "English",
-      ru: translations[lang]?.["language.russian"] || "Russian",
-    };
-
-    langToggle.textContent = langText[lang];
   }
 
   // Event Listeners
@@ -262,17 +271,15 @@ class SiteManager {
     });
 
     // Listen for system theme changes
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", () => {
-        const currentTheme =
-          document.documentElement.getAttribute("data-theme");
-        if (currentTheme === "auto") {
-          this.updateFavicon();
-          this.updateLogo();
-          this.updateThemeToggleText();
-        }
-      });
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", (e) => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      if (currentTheme === "auto") {
+        this.updateFavicon();
+        this.updateLogo();
+        this.updateThemeCSSVariables();
+      }
+    });
   }
 }
 
