@@ -557,6 +557,15 @@ h1 {
   max-width: 90%;
 }
 
+.news-card .card-body .text-muted {
+  margin-bottom: 0.5rem !important;
+  display: block;
+}
+
+.news-card .card-text.lead {
+  margin-top: 0.5rem !important;
+}
+
 .card-additional {
   margin-top: auto; /* Pushes to bottom */
   padding-top: 1.5rem;
@@ -748,12 +757,48 @@ footer {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+/* ===== MOBILE NAVBAR FIXES ===== */
+
+/* Fix for mobile navbar layout */
 @media (max-width: 768px) {
-  .navbar-toggler {
-    display: block;
+  .navbar .container {
+    flex-wrap: wrap; /* Allow wrapping */
+    position: relative;
+    padding: 0.5rem 1rem;
   }
 
+  /* Brand logo positioning */
+  .navbar-brand {
+    order: 1;
+    flex: 1;
+    min-width: 0; /* Allow shrinking */
+  }
+
+  /* Navbar toggler positioning */
+  .navbar-toggler {
+    order: 2;
+    display: block;
+    margin-left: auto; /* Push to right */
+    margin-right: 0;
+    z-index: 1002; /* Above other elements */
+  }
+
+  /* Controls positioning */
+  .controls {
+    order: 3;
+    margin: 0;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: flex-start; /* Align to left */
+    background: var(--navbar-bg);
+    padding: 0.5rem 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  /* Navbar nav positioning */
   .navbar-nav {
+    order: 4;
     display: none;
     flex-direction: column;
     position: absolute;
@@ -763,87 +808,94 @@ footer {
     background: var(--navbar-bg);
     padding: 1rem;
     gap: 0.5rem;
+    z-index: 1001;
+    margin-top: 0;
+    box-shadow: 0 4px 6px var(--shadow-color);
   }
 
   .navbar-nav.active {
     display: flex;
   }
 
+  /* Ensure proper spacing */
+  .nav-link {
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+
+  /* Fix dropdown positioning on mobile */
+  .dropdown-menu {
+    position: static !important; /* Remove absolute positioning */
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 0.5rem;
+    width: 100%;
+    display: none;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  /* Fix dropdown toggle alignment */
+  .dropdown-toggle {
+    justify-content: center;
+    min-width: 120px;
+  }
+
+  /* Theme and language switcher specific */
+  .theme-switcher,
+  .language-switcher {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .navbar .container {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Stack controls vertically on very small screens */
   .controls {
-    margin-left: 0;
-    margin-top: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .theme-switcher,
+  .language-switcher {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
     width: 100%;
     justify-content: center;
   }
 
-  .dropdown-toggle {
-    min-width: 80px;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .dropdown-menu {
-    right: auto;
-    left: 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .lead {
+  /* Adjust navbar toggler size */
+  .navbar-toggler {
+    padding: 0.4rem;
     font-size: 1.1rem;
   }
 
-  .logo-large {
-    width: 250px;
-  }
-
-  .news-card {
-    grid-template-columns: 1fr;
-  }
-
-  .btn {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0.5rem auto;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .card {
-    padding: 1.5rem;
-  }
-
-  .filter-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .filter-btn {
-    width: 100%;
-    max-width: 200px;
-  }
-
-  .search-container {
-    margin: 1.5rem 0;
-  }
-
-  .search-box {
-    padding: 0.25rem;
-  }
-
-  .search-input {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.9rem;
-  }
-
-  .search-btn {
+  /* Adjust logo size on very small screens */
+  .navbar-brand img.nav-logo {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* Fix for when navbar is open on mobile */
+@media (max-width: 768px) {
+  body.nav-open {
+    overflow: hidden; /* Prevent scrolling when nav is open */
+  }
+
+  /* Ensure controls are visible when nav is open */
+  .navbar-nav.active ~ .controls {
+    display: flex !important;
   }
 }
 
