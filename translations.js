@@ -96,9 +96,15 @@ window.translations = {
     "news.author": "Author",
     "news.date": "Date",
 
+    "news.yarikstudio_update_3.0.title": "Update Yarik Studio site (3.0)",
+    "news.yarikstudio_update_3.0.description":
+      "Added theme change (previously there was only light), language change, project search and improved design.",
+    "news.yarikstudio_update_3.0.author_name": "Yaroslav Krasulya",
+    "news.yarikstudio_update_3.0.date": "January 10, 2026",
+
     "news.spaceyarik.title": "New project: SpaceYarik Simulator",
     "news.spaceyarik.description":
-      "Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.",
+      "Explore the Solar System with realistic scales! Navigate planets, moons, asteroids, and comets. Adjust scale modes, follow orbits, and discover celestial mechanics in an interactive simulation!",
     "news.spaceyarik.author_name": "Yaroslav Krasulya",
     "news.spaceyarik.date": "December 31, 2025",
 
@@ -128,10 +134,10 @@ window.translations = {
     "news.yarikcoin.author_name": "Yaroslav Krasulya",
     "news.yarikcoin.date": "September 7, 2025",
 
-    "news.studio_update.title": "Update Yarik Studio site (2.0)",
-    "news.studio_update.description": 'Added "News" and "Support".',
-    "news.studio_update.author_name": "Yaroslav Krasulya",
-    "news.studio_update.date": "August 16, 2025",
+    "news.yarikstudio_update_2.0.title": "Update Yarik Studio site (2.0)",
+    "news.yarikstudio_update_2.0.description": 'Added "News" and "Support".',
+    "news.yarikstudio_update_2.0.author_name": "Yaroslav Krasulya",
+    "news.yarikstudio_update_2.0.date": "August 16, 2025",
 
     // Support page
     "support.message":
@@ -267,9 +273,15 @@ window.translations = {
     "news.author": "Автор",
     "news.date": "Дата",
 
+    "news.yarikstudio_update_3.0.title": "Обновление сайта Yarik Studio (3.0)",
+    "news.yarikstudio_update_3.0.description":
+      "Добавлена смена темы (раньше была только светлая), изменение языка, поиск проектов и улучшен дизаин.",
+    "news.yarikstudio_update_3.0.author_name": "Красуля Ярослав",
+    "news.yarikstudio_update_3.0.date": "10 января 2026",
+
     "news.spaceyarik.title": "Новый проект: SpaceYarik Simulator",
     "news.spaceyarik.description":
-      "Создайте свою армию в 6 исторических эпохах, улучшайте технологии и сражайтесь с врагами и боссами в стратегических боях.",
+      "Исследуйте Солнечную систему в реальном масштабе! Навигация по планетам, лунам, астероидам и кометам. Регулируйте режимы масштаба, следите за орбитами и изучайте небесную механику в интерактивной симуляции!",
     "news.spaceyarik.author_name": "Красуля Ярослав",
     "news.spaceyarik.date": "31 декабря 2025",
 
@@ -283,7 +295,7 @@ window.translations = {
       "Бета-версия нового проекта: War through the Ages",
     "news.war_ages_beta.description":
       "Создайте свою армию в 6 исторических эпохах, улучшайте технологии,и сражайтесь с врагами и боссами в стратегических боях.",
-    "news.war_ages_beta.author_name": "Красуля Ярославi",
+    "news.war_ages_beta.author_name": "Красуля Ярослав",
     "news.war_ages_beta.date": "23 ноября 2025",
 
     "news.yaroslavai.title": "Новый проект: Yaroslav AI",
@@ -298,11 +310,11 @@ window.translations = {
     "news.yarikcoin.author_name": "Красуля Ярослав",
     "news.yarikcoin.date": "7 сентября 2025",
 
-    "news.studio_update.title": "Обновление сайта Yarik Studio (2.0)",
-    "news.studio_update.description":
+    "news.yarikstudio_update_2.0.title": "Обновление сайта Yarik Studio (2.0)",
+    "news.yarikstudio_update_2.0.description":
       'Добавлены разделы "Новости" и "Поддержка".',
-    "news.studio_update.author_name": "Красуля Ярослав",
-    "news.studio_update.date": "16 августа 2025",
+    "news.yarikstudio_update_2.0.author_name": "Красуля Ярослав",
+    "news.yarikstudio_update_2.0.date": "16 августа 2025",
 
     // Support page
     "support.message":
