@@ -9,6 +9,8 @@ class SiteManager {
     this.initLanguage();
     this.setupEventListeners();
     this.updateThemeIcons();
+    this.updateThemeToggleText();
+    this.updateLanguageToggleText();
   }
 
   // Theme Management
@@ -22,8 +24,6 @@ class SiteManager {
 
     if (savedTheme) {
       theme = savedTheme;
-    } else if (prefersDark) {
-      theme = "auto";
     }
 
     this.setTheme(theme);
@@ -34,6 +34,20 @@ class SiteManager {
     localStorage.setItem("theme", theme);
     this.updateThemeIcons();
     this.updateFavicon();
+    this.updateThemeToggleText();
+    this.updateLogo();
+  }
+
+  getEffectiveTheme() {
+    const theme = document.documentElement.getAttribute("data-theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (theme === "auto") {
+      return prefersDark ? "dark" : "light";
+    }
+    return theme;
   }
 
   updateThemeIcons() {
@@ -49,21 +63,48 @@ class SiteManager {
   }
 
   updateFavicon() {
-    const theme = document.documentElement.getAttribute("data-theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+    const theme = this.getEffectiveTheme();
     const link = document.querySelector("link[rel*='icon']");
 
-    let iconPath = "../../assets/favicons/favicon-light.svg";
+    // If browser/effective theme is light, use dark favicon (for contrast)
+    // If browser/effective theme is dark, use light favicon (for contrast)
+    let iconPath = "../assets/favicons/favicon-dark.svg";
 
-    if (theme === "dark" || (theme === "auto" && prefersDark)) {
-      iconPath = "../../assets/favicons/favicon-dark.svg";
+    if (theme === "dark") {
+      iconPath = "../assets/favicons/favicon-light.svg";
     }
 
     if (link) {
       link.href = iconPath;
     }
+  }
+
+  updateLogo() {
+    const logo = document.querySelector(".logo-large");
+    if (!logo) return;
+
+    const theme = this.getEffectiveTheme();
+
+    if (theme === "light") {
+      logo.src = "../assets/logos/logo-yarikstudio-dark.svg";
+    } else {
+      logo.src = "../assets/logos/logo-yarikstudio-light.svg";
+    }
+  }
+
+  updateThemeToggleText() {
+    const theme = document.documentElement.getAttribute("data-theme");
+    const themeToggle = document.querySelector(".theme-toggle .current-theme");
+    if (!themeToggle) return;
+
+    const lang = document.documentElement.getAttribute("lang");
+    const themeText = {
+      auto: translations[lang]?.["theme.auto"] || "Auto",
+      light: translations[lang]?.["theme.light"] || "Light",
+      dark: translations[lang]?.["theme.dark"] || "Dark",
+    };
+
+    themeToggle.textContent = themeText[theme];
   }
 
   // Language Management
@@ -87,6 +128,8 @@ class SiteManager {
     localStorage.setItem("language", lang);
     this.updateContent(lang);
     this.updateLanguageButtons();
+    this.updateLanguageToggleText();
+    this.updateThemeToggleText();
   }
 
   updateContent(lang) {
@@ -95,14 +138,26 @@ class SiteManager {
     elements.forEach((element) => {
       const key = element.getAttribute("data-i18n");
       if (translations[lang] && translations[lang][key]) {
+        const translation = translations[lang][key];
+
         if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-          element.placeholder = translations[lang][key];
+          element.placeholder = translation;
         } else if (element.hasAttribute("title")) {
-          element.title = translations[lang][key];
+          element.title = translation;
         } else if (element.hasAttribute("alt")) {
-          element.alt = translations[lang][key];
+          element.alt = translation;
+        } else if (element.tagName === "IMG") {
+          // Don't change image src for logos
+          if (!element.classList.contains("logo-large")) {
+            element.alt = translation;
+          }
         } else {
-          element.textContent = translations[lang][key];
+          // Handle HTML content
+          if (translation.includes("<br>")) {
+            element.innerHTML = translation;
+          } else {
+            element.textContent = translation;
+          }
         }
       }
     });
@@ -120,6 +175,19 @@ class SiteManager {
     });
   }
 
+  updateLanguageToggleText() {
+    const lang = document.documentElement.getAttribute("lang");
+    const langToggle = document.querySelector(".lang-toggle .current-lang");
+    if (!langToggle) return;
+
+    const langText = {
+      en: translations[lang]?.["language.english"] || "English",
+      ru: translations[lang]?.["language.russian"] || "Russian",
+    };
+
+    langToggle.textContent = langText[lang];
+  }
+
   // Event Listeners
   setupEventListeners() {
     // Theme dropdown
@@ -127,17 +195,9 @@ class SiteManager {
     const themeDropdown = document.querySelector(".theme-dropdown");
 
     if (themeToggle) {
-      themeToggle.addEventListener("click", () => {
+      themeToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
         themeDropdown.classList.toggle("show");
-      });
-
-      document.addEventListener("click", (e) => {
-        if (
-          !themeToggle.contains(e.target) &&
-          !themeDropdown.contains(e.target)
-        ) {
-          themeDropdown.classList.remove("show");
-        }
       });
     }
 
@@ -146,17 +206,9 @@ class SiteManager {
     const langDropdown = document.querySelector(".lang-dropdown");
 
     if (langToggle) {
-      langToggle.addEventListener("click", () => {
+      langToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
         langDropdown.classList.toggle("show");
-      });
-
-      document.addEventListener("click", (e) => {
-        if (
-          !langToggle.contains(e.target) &&
-          !langDropdown.contains(e.target)
-        ) {
-          langDropdown.classList.remove("show");
-        }
       });
     }
 
@@ -164,6 +216,9 @@ class SiteManager {
     document.querySelectorAll(".theme-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         this.setTheme(btn.dataset.theme);
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+          menu.classList.remove("show");
+        });
       });
     });
 
@@ -171,6 +226,9 @@ class SiteManager {
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         this.setLanguage(btn.dataset.lang);
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+          menu.classList.remove("show");
+        });
       });
     });
 
@@ -196,6 +254,13 @@ class SiteManager {
       });
     }
 
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+        menu.classList.remove("show");
+      });
+    });
+
     // Listen for system theme changes
     window
       .matchMedia("(prefers-color-scheme: dark)")
@@ -203,8 +268,9 @@ class SiteManager {
         const currentTheme =
           document.documentElement.getAttribute("data-theme");
         if (currentTheme === "auto") {
-          this.updateThemeIcons();
           this.updateFavicon();
+          this.updateLogo();
+          this.updateThemeToggleText();
         }
       });
   }
@@ -242,9 +308,17 @@ class ProjectFilter {
 
         this.projectCards.forEach((card) => {
           if (filterValue === "all" || card.dataset.category === filterValue) {
-            card.classList.remove("hidden");
+            card.style.display = "block";
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            }, 10);
           } else {
-            card.classList.add("hidden");
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 300);
           }
         });
       });
@@ -261,13 +335,4 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".project-card")) {
     window.projectFilter = new ProjectFilter();
   }
-
-  // Close dropdowns when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".dropdown")) {
-      document.querySelectorAll(".dropdown-menu").forEach((menu) => {
-        menu.classList.remove("show");
-      });
-    }
-  });
 });

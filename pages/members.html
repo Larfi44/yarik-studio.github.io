@@ -6,17 +6,17 @@
     <title data-i18n="title.members">Yarik Studio Members</title>
     <link
       rel="icon"
-      href="../../assets/favicons/favicon-light.svg"
+      href="../assets/favicons/favicon-dark.svg"
       type="image/svg+xml"
     />
-    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <nav class="navbar">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img
-            src="../../assets/favicons/favicon-light.svg"
+            src="../assets/favicons/favicon-light.svg"
             alt="Yarik Studio Logo"
             width="50"
             height="50"
@@ -52,75 +52,74 @@
               >Technical support</a
             >
           </li>
-
-          <div class="controls">
-            <div class="theme-switcher dropdown">
-              <button class="dropdown-toggle theme-toggle">
-                <span class="theme-icon">🌓</span>
-                <span data-i18n="theme.theme">Theme</span>
-              </button>
-              <div class="dropdown-menu theme-dropdown">
-                <a
-                  class="dropdown-item theme-btn"
-                  data-theme="auto"
-                  data-i18n="theme.auto"
-                  >Auto</a
-                >
-                <a
-                  class="dropdown-item theme-btn"
-                  data-theme="light"
-                  data-i18n="theme.light"
-                  >Light</a
-                >
-                <a
-                  class="dropdown-item theme-btn"
-                  data-theme="dark"
-                  data-i18n="theme.dark"
-                  >Dark</a
-                >
-              </div>
-            </div>
-
-            <div class="language-switcher dropdown">
-              <button class="dropdown-toggle lang-toggle">
-                <span class="lang-flag">🌐</span>
-                <span class="lang-text" data-i18n="language.language"
-                  >Language</span
-                >
-              </button>
-              <div class="dropdown-menu lang-dropdown">
-                <a
-                  class="dropdown-item lang-btn"
-                  data-lang="en"
-                  data-i18n="language.english"
-                  >English</a
-                >
-                <a
-                  class="dropdown-item lang-btn"
-                  data-lang="ru"
-                  data-i18n="language.russian"
-                  >Russian</a
-                >
-              </div>
+        </ul>
+        <div class="controls">
+          <div class="theme-switcher dropdown">
+            <button class="dropdown-toggle theme-toggle">
+              <span class="theme-icon">🌓</span>
+              <span class="current-theme" data-i18n="theme.auto">Auto</span>
+            </button>
+            <div class="dropdown-menu theme-dropdown">
+              <a
+                class="dropdown-item theme-btn"
+                data-theme="auto"
+                data-i18n="theme.auto"
+                >Auto</a
+              >
+              <a
+                class="dropdown-item theme-btn"
+                data-theme="light"
+                data-i18n="theme.light"
+                >Light</a
+              >
+              <a
+                class="dropdown-item theme-btn"
+                data-theme="dark"
+                data-i18n="theme.dark"
+                >Dark</a
+              >
             </div>
           </div>
-        </ul>
+
+          <div class="language-switcher dropdown">
+            <button class="dropdown-toggle lang-toggle">
+              <span class="lang-flag">🌐</span>
+              <span class="current-lang" data-i18n="language.english"
+                >English</span
+              >
+            </button>
+            <div class="dropdown-menu lang-dropdown">
+              <a
+                class="dropdown-item lang-btn"
+                data-lang="en"
+                data-i18n="language.english"
+                >English</a
+              >
+              <a
+                class="dropdown-item lang-btn"
+                data-lang="ru"
+                data-i18n="language.russian"
+                >Russian</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
 
     <main class="container">
       <div class="member-card card mt-4">
         <img
-          src="../../assets/images/mantis.jpg"
+          src="../assets/images/mantis.jpg"
           class="member-img"
           alt="Yaroslav Krasulya"
         />
         <div class="card-body">
           <h2 class="card-title">Yaroslav Krasulya</h2>
-          <p class="lead text-muted">
+          <p class="lead text-muted" data-i18n="member.nickname">
             Nickname: Larfi — Owner and main developer
           </p>
-          <p>
+          <p data-i18n="member.description">
             I am the main developer and the owner of Yarik Studio. I do the
             development and design myself.
           </p>
@@ -134,7 +133,7 @@
       </div>
     </footer>
 
-    <script src="../../script.js"></script>
-    <script src="../../translations.js"></script>
+    <script src="../script.js"></script>
+    <script src="../translations.js"></script>
   </body>
 </html>
