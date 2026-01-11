@@ -102,10 +102,17 @@ class SiteManager {
 
     const theme = this.getEffectiveTheme();
 
+    // Determine base path for GitHub Pages vs local
+    const isGitHubPages = window.location.hostname.includes("github.io");
+    const basePath = isGitHubPages ? "/YOUR-REPO-NAME/" : "/";
+
+    // Remove trailing slash if present
+    const cleanBase = basePath.endsWith("/") ? basePath.slice(0, -1) : basePath;
+
     if (theme === "light") {
-      logo.src = "/assets/logos/logo-yarikstudio-dark.svg";
+      logo.src = `${cleanBase}/assets/logos/logo-yarikstudio-dark.svg`;
     } else {
-      logo.src = "/assets/logos/logo-yarikstudio-light.svg";
+      logo.src = `${cleanBase}/assets/logos/logo-yarikstudio-light.svg`;
     }
   }
 
