@@ -103,9 +103,9 @@ class SiteManager {
     const theme = this.getEffectiveTheme();
 
     if (theme === "light") {
-      logo.src = "../assets/logos/logo-yarikstudio-dark.svg";
+      logo.src = "assets/logos/logo-yarikstudio-dark.svg";
     } else {
-      logo.src = "../assets/logos/logo-yarikstudio-light.svg";
+      logo.src = "assets/logos/logo-yarikstudio-light.svg";
     }
   }
 
