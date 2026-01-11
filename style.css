@@ -910,7 +910,6 @@ footer {
 /* ===== RESPONSIVE DESIGN ===== */
 /* ===== FIX MOBILE LAYOUT ONLY ===== */
 @media (max-width: 950px) {
-  /* Reset container for mobile */
   .navbar .container {
     display: flex !important;
     justify-content: space-between !important;
@@ -919,14 +918,12 @@ footer {
     width: 100% !important;
   }
 
-  /* 1. Logo - Force to leftmost */
   .navbar-brand {
     order: 1 !important;
     flex-shrink: 0 !important;
     margin-right: 0 !important;
   }
 
-  /* 2. Controls - Show and position after logo */
   .controls {
     order: 2 !important;
     display: flex !important;
@@ -936,7 +933,6 @@ footer {
     gap: 0.75rem !important;
   }
 
-  /* 3. Hamburger - Force to rightmost */
   .navbar-toggler {
     order: 3 !important;
     display: block !important;
@@ -944,7 +940,6 @@ footer {
     margin-left: 15px !important;
   }
 
-  /* 4. Navigation menu - Hide by default */
   .navbar-nav {
     order: 4 !important;
     display: none !important;
@@ -960,12 +955,10 @@ footer {
     box-shadow: 0 4px 6px var(--shadow-color) !important;
   }
 
-  /* Show nav when active */
   .navbar-nav.active {
     display: flex !important;
   }
 
-  /* Remove desktop centering styles */
   .navbar-nav {
     position: static !important;
     transform: none !important;
@@ -991,7 +984,6 @@ footer {
     font-size: 0.85rem;
   }
 
-  /* Very small screen adjustments */
   .navbar-nav .mobile-controls {
     gap: 0.75rem;
   }
