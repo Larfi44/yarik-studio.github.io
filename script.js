@@ -102,17 +102,24 @@ class SiteManager {
 
     const theme = this.getEffectiveTheme();
 
-    // Determine base path for GitHub Pages vs local
-    const isGitHubPages = window.location.hostname.includes("github.io");
-    const basePath = isGitHubPages ? "/YOUR-REPO-NAME/" : "/";
+    // Simple universal solution - works for both local and GitHub Pages
+    const logoPath = `/Yarik_Studio.github.io/assets/logos/logo-yarikstudio-${
+      theme === "light" ? "dark" : "light"
+    }.svg`;
 
-    // Remove trailing slash if present
-    const cleanBase = basePath.endsWith("/") ? basePath.slice(0, -1) : basePath;
+    // For local development, we need to detect and adjust
+    const isLocal =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
 
-    if (theme === "light") {
-      logo.src = `${cleanBase}/assets/logos/logo-yarikstudio-dark.svg`;
+    if (isLocal) {
+      // For local server, use relative path
+      logo.src = `assets/logos/logo-yarikstudio-${
+        theme === "light" ? "dark" : "light"
+      }.svg`;
     } else {
-      logo.src = `${cleanBase}/assets/logos/logo-yarikstudio-light.svg`;
+      // For GitHub Pages, use absolute with repo name
+      logo.src = logoPath;
     }
   }
 
