@@ -19,7 +19,7 @@ class SiteManager {
   initTheme() {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
 
     let theme = "auto";
@@ -46,7 +46,7 @@ class SiteManager {
     if (theme === "auto") {
       // Check browser preference
       const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        "(prefers-color-scheme: dark)",
       ).matches;
       return prefersDark ? "dark" : "light";
     }
@@ -102,7 +102,7 @@ class SiteManager {
 
     const theme = this.getEffectiveTheme();
 
-    const logoPath = `/Yarik_Studio.github.io/assets/logos/logo-yarikstudio-${
+    const logoPath = `/Yarik-Studio.github.io/assets/logos/logo-yarikstudio-${
       theme === "light" ? "dark" : "light"
     }.svg`;
 
