@@ -84,17 +84,24 @@ class SiteManager {
     });
   }
 
+  baseAssetPath() {
+    return window.location.pathname.replace(/\/[^/]*$/, '/') || '/';
+  }
+
   updateFavicon() {
     const theme = this.getEffectiveTheme();
     const link = document.querySelector("link[rel*='icon']");
+    const base = this.baseAssetPath();
 
-    // Invert: dark theme gets light favicon, light theme gets dark favicon
-    let iconPath = '../assets/favicons/favicon-dark.svg';
-    let newsLogoPath = '../assets/favicons/favicon-dark.svg';
+    const darkIcon = `${base}assets/favicons/favicon-dark.svg`;
+    const lightIcon = `${base}assets/favicons/favicon-light.svg`;
+
+    let iconPath = darkIcon;
+    let newsLogoPath = darkIcon;
 
     if (theme === 'dark') {
-      iconPath = '../assets/favicons/favicon-light.svg';
-      newsLogoPath = '../assets/favicons/favicon-light.svg';
+      iconPath = lightIcon;
+      newsLogoPath = lightIcon;
     }
 
     if (link) {
@@ -112,22 +119,10 @@ class SiteManager {
     if (!logo) return;
 
     const theme = this.getEffectiveTheme();
-
-    const logoPath = `/Yarik-Studio.github.io/assets/logos/logo-yarikstudio-${
+    const base = this.baseAssetPath();
+    logo.src = `${base}assets/logos/logo-yarikstudio-${
       theme === 'light' ? 'dark' : 'light'
     }.svg`;
-
-    const isLocal =
-      window.location.hostname === 'localhost' ||
-      window.location.hostname === '127.0.0.1';
-
-    if (isLocal) {
-      logo.src = `assets/logos/logo-yarikstudio-${
-        theme === 'light' ? 'dark' : 'light'
-      }.svg`;
-    } else {
-      logo.src = logoPath;
-    }
   }
 
   // Language Management
