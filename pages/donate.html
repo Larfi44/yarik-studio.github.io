@@ -1,15 +1,42 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title data-i18n="title.members">Yarik Studio Members</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="title.donate">Support Yarik Studio</title>
     <link
       rel="icon"
       href="../assets/favicons/favicon-dark.svg"
       type="image/svg+xml"
     />
     <link rel="stylesheet" href="../style.css" />
+    <style>
+      [data-theme='light'] .btn-donate-glow {
+        color: #1f2937;
+      }
+      [data-theme='dark'] .btn-donate-glow {
+        color: white;
+      }
+      .heart-icon {
+        font-size: 3rem;
+        animation: pulse 1.5s infinite;
+        display: inline-block;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.15);
+          opacity: 0.85;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
     <script>
       (function () {
         const savedTheme = localStorage.getItem('theme');
@@ -46,10 +73,7 @@
             >
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link active"
-              href="members.html"
-              data-i18n="nav.members"
+            <a class="nav-link" href="members.html" data-i18n="nav.members"
               >Members</a
             >
           </li>
@@ -63,7 +87,7 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link nav-donate"
+              class="nav-link nav-donate active"
               href="donate.html"
               data-i18n="nav.donate"
               >Donate</a
@@ -120,56 +144,54 @@
     </nav>
 
     <main class="container">
-      <div class="member-card card mt-5 mb-5">
-        <img
-          src="../assets/images/mantis.jpg"
-          class="member-img"
-          alt="Yaroslav Krasulya"
-        />
-        <div class="card-body">
-          <h2 class="card-title" data-i18n="member.name">Yaroslav Krasulya</h2>
-          <p class="lead text-muted" data-i18n="member.rank">
-            Owner and Main developer
+      <div class="donate-card">
+        <div class="donate-header">
+          <div class="heart-icon">❤️</div>
+          <h1 data-i18n="donate.title">Support Yarik Studio</h1>
+          <p class="donate-subtitle" data-i18n="donate.subtitle">
+            Your contribution helps us continue developing
           </p>
-          <p data-i18n="member.description">
-            I am the main developer and the owner of Yarik Studio. I do the
-            development and design myself.
+        </div>
+        <div class="donate-body">
+          <p data-i18n="donate.description1">
+            Yarik Studio is a creative non-commercial IT startup that creates
+            useful AI assistants, websites, and mobile applications.
           </p>
-          <div class="member-contacts-inline">
-            <h3 data-i18n="member.contacts_title">📫 Contacts</h3>
-            <div class="contacts-list-vertical">
-              <a href="mailto:yaroslav.krasulya@icloud.com" class="contact-chip"
-                >📧 yaroslav@yarik-studio.ru</a
-              >
-              <!-- GitHub button exactly like index.html -->
-              <a
-                href="https://github.com/Larfi44"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-github btn-github-small"
-              >
-                <svg
-                  class="github-icon"
-                  viewBox="0 0 24 24"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-                <span data-i18n="member.github">GitHub Profile</span>
-              </a>
-            </div>
-          </div>
+          <p data-i18n="donate.description2">
+            We are committed to the open-source philosophy — all our projects
+            are free to use and their source code is publicly available on
+            GitHub.
+          </p>
+          <p data-i18n="donate.description3">
+            We create tools that help people in their daily lives, education,
+            and entertainment. Our goal is to make technology accessible to
+            everyone.
+          </p>
+          <p data-i18n="donate.description4">
+            If you appreciate our work and would like to support us, we would be
+            grateful for any donation. Your support helps us continue developing
+            new projects and maintaining existing ones.
+          </p>
+        </div>
+        <div class="donate-footer">
+          <a
+            class="btn-donate-glow"
+            href="https://pay.cloudtips.ru/p/b94e349b"
+            target="_blank"
+          >
+            <span class="btn-icon">❤️</span>
+            <span class="btn-text" data-i18n="donate.button">Donate</span>
+          </a>
+          <p class="secure-note" data-i18n="donate.secure_payment">
+            🔒 Secure payment via CloudTips by Mir card
+          </p>
         </div>
       </div>
     </main>
 
     <footer>
       <div class="container">
-        <small class="text-muted">© Yarik Studi 2025-2026</small>
+        <small class="text-muted">© Yarik Studio 2025-2026</small>
       </div>
     </footer>
     <button id="backToTop" class="back-to-top" aria-label="Back to top">

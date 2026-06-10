@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,6 +10,15 @@
       type="image/svg+xml"
     />
     <link rel="stylesheet" href="../style.css" />
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme)
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        const savedLang = localStorage.getItem('language');
+        if (savedLang) document.documentElement.setAttribute('lang', savedLang);
+      })();
+    </script>
   </head>
   <body>
     <nav class="navbar">
@@ -23,11 +32,9 @@
             class="nav-logo"
           />
         </a>
-
         <button class="navbar-toggler" aria-label="Toggle navigation">
-          <span>☰</span>
+          ☰
         </button>
-
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="../index.html" data-i18n="nav.home"
@@ -55,11 +62,19 @@
               >Technical support</a
             >
           </li>
+          <li class="nav-item">
+            <a
+              class="nav-link nav-donate"
+              href="donate.html"
+              data-i18n="nav.donate"
+              >Donate</a
+            >
+          </li>
         </ul>
         <div class="controls">
-          <div class="theme-switcher dropdown">
+          <div class="dropdown">
             <button class="dropdown-toggle theme-toggle">
-              <span data-i18n="theme.theme">Theme</span>
+              <span data-i18n="theme.theme">Theme</span> ▾
             </button>
             <div class="dropdown-menu theme-dropdown">
               <a
@@ -82,10 +97,9 @@
               >
             </div>
           </div>
-
-          <div class="language-switcher dropdown">
+          <div class="dropdown">
             <button class="dropdown-toggle lang-toggle">
-              <span data-i18n="language.language">Language</span>
+              <span data-i18n="language.language">Language</span> ▾
             </button>
             <div class="dropdown-menu lang-dropdown">
               <a
@@ -158,6 +172,14 @@
         <button
           type="button"
           class="filter-btn"
+          data-filter="desktop"
+          data-i18n="projects.filter_desktop"
+        >
+          Desktop apps
+        </button>
+        <button
+          type="button"
+          class="filter-btn"
           data-filter="others"
           data-i18n="projects.filter_others"
         >
@@ -165,10 +187,10 @@
         </button>
       </div>
 
-      <!-- Projects -->
-      <div class="card-grid" id="projects-container">
-        <!-- Project cards remain the same as before -->
-        <div class="project-card" data-category="website">
+      <!-- Projects Grid -->
+      <div class="card-grid card-grid-centered" id="projects-container">
+        <!-- Yaroslav AI -->
+        <!-- <div class="project-card" data-category="website">
           <div class="card">
             <img
               src="../assets/logos/logo-yaroslavai.svg"
@@ -207,8 +229,53 @@
               </div>
             </div>
           </div>
+        </div> -->
+
+        <!-- Yarik Weather -->
+        <div class="project-card" data-category="website,mobile,desktop">
+          <div class="card">
+            <img
+              src="../assets/logos/logo-yarikweather.svg"
+              class="card-img"
+              alt="Yarik Weather"
+            />
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="project.yarikweather.title">
+                Yarik Weather
+              </h5>
+              <p class="card-text" data-i18n="project.yarikweather.description">
+                Weather app with AI-powered recommendations, interactive charts,
+                astronomy data, and coastal city detection.
+              </p>
+              <div class="card-additional">
+                <p class="text-muted">
+                  <span data-i18n="projects.languages">Languages</span>:
+                  <span data-i18n="project.yarikweather.languages"
+                    >English, Russian</span
+                  >
+                </p>
+                <p class="text-muted">
+                  <span data-i18n="projects.release_date">Release date</span>:
+                  <span data-i18n="project.yarikweather.release_date"
+                    >June 10, 2026</span
+                  >
+                </p>
+                <p class="text-muted" data-i18n="projects.site+mobile+desktop">
+                  Site, Mobile app, Desktop app
+                </p>
+                <a
+                  href="https://larfi44.github.io/yarik-weather/"
+                  class="btn btn-primary"
+                  target="_blank"
+                  data-i18n="button.open"
+                  >Open</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- SpaceYarik Simulator -->
         <div class="project-card" data-category="website">
           <div class="card">
             <img
@@ -252,6 +319,7 @@
           </div>
         </div>
 
+        <!-- War through the Ages -->
         <div class="project-card" data-category="website">
           <div class="card">
             <img
@@ -293,6 +361,7 @@
           </div>
         </div>
 
+        <!-- Quantum clicker -->
         <div class="project-card" data-category="mobile">
           <div class="card">
             <img
@@ -339,6 +408,7 @@
           </div>
         </div>
 
+        <!-- To-do List -->
         <div class="project-card" data-category="mobile">
           <div class="card">
             <img
@@ -381,6 +451,7 @@
           </div>
         </div>
 
+        <!-- YarikCoin -->
         <div class="project-card" data-category="website">
           <div class="card">
             <img
@@ -422,6 +493,7 @@
           </div>
         </div>
 
+        <!-- Tests in pikuco.ru -->
         <div class="project-card" data-category="others">
           <div class="card">
             <img
@@ -473,11 +545,27 @@
 
     <footer>
       <div class="container">
-        <small class="text-muted">© Yarik Studio</small>
+        <small class="text-muted">© Yarik Studio 2025-2026</small>
       </div>
     </footer>
 
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      ↑
+    </button>
+
     <script src="../script.js"></script>
     <script src="../translations.js"></script>
+    <script>
+      // Back to top button
+      const backBtn = document.getElementById('backToTop');
+      if (backBtn) {
+        window.addEventListener('scroll', () => {
+          backBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+        });
+        backBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    </script>
   </body>
 </html>
