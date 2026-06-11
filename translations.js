@@ -62,7 +62,7 @@ window.translations = {
     // War through the Ages
     'project.war_ages.title': 'War through the Ages',
     'project.war_ages.description':
-      'Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.',
+      'Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat!',
     'project.war_ages.languages': 'English, Russian',
     'project.war_ages.release_date': 'November 29, 2025',
     // Quantum clicker
@@ -121,13 +121,13 @@ window.translations = {
     'news.war_ages_release.title':
       'Release of the New project: War through the Ages',
     'news.war_ages_release.description':
-      'Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.',
+      'Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat!',
     'news.war_ages_release.date': 'November 29, 2025',
     // War through the ages Beta
     'news.war_ages_beta.title':
       'Beta version of the New project: War through the Ages',
     'news.war_ages_beta.description':
-      'Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat.',
+      'Build your army across 6 historical eras, upgrade technology, and battle enemies and bosses in strategic combat!',
     'news.war_ages_beta.date': 'November 23, 2025',
     // Yaroslav AI
     'news.yaroslavai.title': 'New project: Yaroslav AI',
