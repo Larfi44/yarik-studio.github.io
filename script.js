@@ -85,7 +85,9 @@ class SiteManager {
   }
 
   baseAssetPath() {
-    return window.location.pathname.replace(/\/[^/]*$/, '/') || '/';
+    // pages/ subdirectory needs ../ prefix, root pages need no prefix
+    const path = window.location.pathname;
+    return path.includes('/pages/') ? '../' : '';
   }
 
   updateFavicon() {
