@@ -84,35 +84,36 @@ class SiteManager {
     });
   }
 
-  baseAssetPath() {
-    // pages/ subdirectory needs ../ prefix, root pages need no prefix
+  rootPath() {
+    // Returns the root path relative to the current page
+    // e.g. for /pages/news.html returns '../', for index.html returns ''
     const path = window.location.pathname;
-    return path.includes('/pages/') ? '../' : '';
+    if (path.includes('/pages/') || path.includes('/pages')) {
+      return '../';
+    }
+    return '';
   }
 
   updateFavicon() {
     const theme = this.getEffectiveTheme();
     const link = document.querySelector("link[rel*='icon']");
-    const base = this.baseAssetPath();
+    const root = this.rootPath();
 
-    const darkIcon = `${base}assets/favicons/favicon-dark.svg`;
-    const lightIcon = `${base}assets/favicons/favicon-light.svg`;
-
-    let iconPath = darkIcon;
-    let newsLogoPath = darkIcon;
+    let iconFile = 'favicon-dark.svg';
+    let newsLogoFile = 'favicon-dark.svg';
 
     if (theme === 'dark') {
-      iconPath = lightIcon;
-      newsLogoPath = lightIcon;
+      iconFile = 'favicon-light.svg';
+      newsLogoFile = 'favicon-light.svg';
     }
 
     if (link) {
-      link.href = iconPath;
+      link.href = root + 'assets/favicons/' + iconFile;
     }
 
     // Update news-logo images to match theme
     document.querySelectorAll('.news-logo').forEach((img) => {
-      img.src = newsLogoPath;
+      img.src = root + 'assets/favicons/' + newsLogoFile;
     });
   }
 
@@ -121,10 +122,9 @@ class SiteManager {
     if (!logo) return;
 
     const theme = this.getEffectiveTheme();
-    const base = this.baseAssetPath();
-    logo.src = `${base}assets/logos/logo-yarikstudio-${
-      theme === 'light' ? 'dark' : 'light'
-    }.svg`;
+    const root = this.rootPath();
+    const file = theme === 'light' ? 'dark' : 'light';
+    logo.src = root + 'assets/logos/logo-yarikstudio-' + file + '.svg';
   }
 
   // Language Management

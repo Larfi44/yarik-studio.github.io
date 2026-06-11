@@ -147,10 +147,6 @@ window.translations = {
     // ---- Support page ----
     'support.message':
       'You can write to technical support. You can share about the bug, propose an idea and so on.<br>To write in the support, write to the following email:',
-    'support.email1': 'yaroslav.krasulya@gmail.com',
-    'support.followup':
-      'If there is no response within 2 days, please send your message again to the same email or write it to another email:',
-    'support.email2': 'yaroslav.krasulya@icloud.com',
 
     // ---- Donate page ----
     'donate.title': 'Support Yarik Studio',
@@ -328,10 +324,6 @@ window.translations = {
     // ---- Support page ----
     'support.message':
       'Вы можете написать в техническую поддержку. Вы можете сообщить об ошибке, предложить идею и так далее.<br>Для обращения напишите на следующий email:',
-    'support.email1': 'yaroslav.krasulya@gmail.com',
-    'support.followup':
-      'Если в течение 2 дней нет ответа, пожалуйста, отправьте ваше сообщение снова на тот же email или напишите на другой:',
-    'support.email2': 'yaroslav.krasulya@icloud.com',
 
     // ---- Donate page ----
     'donate.title': 'Поддержать Yarik Studio',
