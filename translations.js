@@ -52,7 +52,7 @@ window.translations = {
     'project.yarikweather.description':
       'Weather app with AI-powered recommendations, interactive charts, astronomy data, and coastal city detection.',
     'project.yarikweather.languages': 'English, Russian',
-    'project.yarikweather.release_date': 'June 10, 2026',
+    'project.yarikweather.release_date': 'June 11, 2026',
     // SpaceYarik Simulator
     'project.spaceyarik.title': 'SpaceYarik Simulator',
     'project.spaceyarik.description':
@@ -106,7 +106,7 @@ window.translations = {
     'news.yarikweather.title': 'New project: Yarik Weather',
     'news.yarikweather.description':
       'This is the weather app with AI-powered recommendations, interactive charts, astronomy data, and coastal city detection.',
-    'news.yarikweather.date': 'June 10, 2026',
+    'news.yarikweather.date': 'June 11, 2026',
     // Yarik Studio 3.0
     'news.yarikstudio_update_3.0.title': 'Update Yarik Studio site (3.0)',
     'news.yarikstudio_update_3.0.description':
@@ -233,7 +233,7 @@ window.translations = {
     'project.yarikweather.description':
       'Приложение о погоде с рекомендациями на основе искусственного интеллекта, интерактивными картами, астрономическими данными и функцией определения прибрежных городов.',
     'project.yarikweather.languages': 'Английский, Русский',
-    'project.yarikweather.release_date': '10 июня 2026',
+    'project.yarikweather.release_date': '11 июня 2026',
     // SpaceYarik Simulator
     'project.spaceyarik.title': 'SpaceYarik Simulator',
     'project.spaceyarik.description':
@@ -287,7 +287,7 @@ window.translations = {
     'news.yarikweather.title': 'Новый проект: Yarik Weather',
     'news.yarikweather.description':
       'Приложение о погоде с рекомендациями на основе искусственного интеллекта, интерактивными картами, астрономическими данными и функцией определения прибрежных городов.',
-    'news.yarikweather.date': '10 июня 2026',
+    'news.yarikweather.date': '11 июня 2026',
     // Yarik Studio 3.0
     'news.yarikstudio_update_3.0.title': 'Обновление сайта Yarik Studio (3.0)',
     'news.yarikstudio_update_3.0.description':

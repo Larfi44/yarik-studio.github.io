@@ -194,21 +194,7 @@
         <small class="text-muted">© Yarik Studio 2025-2026</small>
       </div>
     </footer>
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-      ↑
-    </button>
     <script src="../script.js"></script>
     <script src="../translations.js"></script>
-    <script>
-      const backBtn = document.getElementById('backToTop');
-      if (backBtn) {
-        window.addEventListener('scroll', () => {
-          backBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-        });
-        backBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-    </script>
   </body>
 </html>
